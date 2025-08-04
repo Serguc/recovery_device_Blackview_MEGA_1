@@ -54,7 +54,3 @@ fastboot flash vendor_boot twrp_vendor_boot.img
 ### Thanks to
 
 @Serguc
-@MisterZtr
-@lopestom
-
-
