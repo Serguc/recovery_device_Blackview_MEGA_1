@@ -25,17 +25,17 @@ Weight  | 528g
 
 # Building
 Works:
-- [ ] ADB
+- [X] ADB
 - [ ] Trustkernel Decryption
 - [X] Display
-- [ ] Fasbootd
-- [ ] Flashing
-- [ ] MTP
-- [ ] Sideload
-- [ ] USB OTG
-- [ ] SDCard
+- [X] Fasbootd
+- [X] Flashing
+- [X] MTP
+- [X] Sideload
+- [X] USB OTG
+- [X] SDCard
 - [ ] Touch
-- [ ] Flashlight
+- [X] Flashlight
 - [ ] Vibrator
 
 ## Building
