@@ -180,10 +180,13 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 #Perhaps this value is not correct
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
+
 #TW_DEVICE_VERSION := MEGA_1_NEU
 
 # vendor module loading
 TW_LOAD_VENDOR_MODULES := "panel-hx83102-fhd-jindongfang-vdo-60hz-cphy-tp7691.ko Himax_firmware.bin"
+
+/sys/class/timed_output/vibrator/enable
 
 # Debug
 TARGET_USES_LOGD := true
