@@ -188,6 +188,7 @@ TW_LOAD_VENDOR_MODULES := "panel-hx83102-fhd-jindongfang-vdo-60hz-cphy-tp7691.ko
 # Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
+TWRP_EVENT_LOGGING := true
 
 # Apex
 TW_EXCLUDE_APEX=true
