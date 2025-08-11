@@ -47,7 +47,7 @@ ENABLE_SCHEDBOOST := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MEGA_1
 TARGET_NO_BOOTLOADER := true
-TARGET_USES_UEFI := true
+#TARGET_USES_UEFI := true
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6789
@@ -185,8 +185,9 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
 
 # vendor module loading
 TW_LOAD_VENDOR_MODULES := "panel-hx83102-fhd-jindongfang-vdo-60hz-cphy-tp7691.ko Himax_firmware.bin"
-
-/sys/class/timed_output/vibrator/enable
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+TW_LOAD_PREBUILT_MODULES := true
 
 # Debug
 TARGET_USES_LOGD := true
