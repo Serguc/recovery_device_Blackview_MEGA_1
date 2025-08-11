@@ -1,2 +1,2 @@
 #!/sbin/sh
-   insmod /vendor/lib/modules/focaltech_tp.ko
+   insmod /vendor/firmware/Himax_firmware.bin
