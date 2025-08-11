@@ -184,7 +184,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
 #TW_DEVICE_VERSION := MEGA_1_NEU
 
 # vendor module loading
-TW_LOAD_VENDOR_MODULES := "panel-hx83102-fhd-jindongfang-vdo-60hz-cphy-tp7691.ko Himax_firmware.bin"
+TW_LOAD_VENDOR_MODULES := "Himax_firmware.bin"
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_LOAD_PREBUILT_MODULES := true
