@@ -2,6 +2,27 @@ import /tee.rc
 import /trustonic.rc
 import /mtk-plpath-utils.rc
 
+on boot
+    write /proc/bootprof "INIT:boot"
+
+ # Touch Panel
+    # chmod 0664 /dev/touch
+    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
+    chown root diag /sys/module/tpd_setting/parameters/tpd_mode
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time0
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time1
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_spl_num
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_pressure_threshold
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_auto_time_interval
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_sample_cnt
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_asamp
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
+
+    chmod 0666 /dev/pmem_multimedia
+
+
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
 
