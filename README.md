@@ -48,7 +48,7 @@ mka vendorbootimage
 ## To use it:
 
 ```
-fastboot flash vendor_boot twrp_vendor_boot.img
+fastboot flash vendor_boot vendor_boot.img
 
 ```
 ### Thanks to
