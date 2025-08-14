@@ -98,3 +98,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 PRODUCT_COPY_FILES += \
      device/Blackview/MEGA_1/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc \
      device/Blackview/MEGA_1/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789
+
+# OEM otacerts
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(DEVICE_PATH)/security/otacert.zip
