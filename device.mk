@@ -101,4 +101,4 @@ PRODUCT_COPY_FILES += \
 
 # OEM otacerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/otacert.zip
+    $(DEVICE_PATH)/security/releasekey
