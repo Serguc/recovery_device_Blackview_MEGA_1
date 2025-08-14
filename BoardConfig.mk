@@ -190,6 +190,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
 TW_LOAD_VENDOR_MODULES := "Himax_firmware.bin HX83102J"
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+TW_LOAD_VENDOR_DLKM_MODULES := true
 TW_LOAD_PREBUILT_MODULES := true
 
 # Debug
