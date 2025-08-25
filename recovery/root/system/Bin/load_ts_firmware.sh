@@ -43,3 +43,16 @@ AXIS_TOOL_MAJOR: source=0x1002 min=0.0 max=2332.3809 flat=0.0 fuzz=0.0 resolutio
 AXIS_TOOL MINOR: source=0x1002 min=0.0
 
 max=2332.3809 flat=0.0 fuzz=0.0 resolution=0.0
+
+# Fix up fts_ts
+if [[ -d /sys/class/touchscreen/mtk-tpd ]]; then
+echo "chipone"
+fts_ts_path=/vendor/firmware/novatek_ts_fw.bin
+flash_path=/sys/mtk-tpd/Himax_firmware
+
+        sleep 2
+
+        echo $chipone_fw_path > $flash_path/update_from_file
+fi
+
+exit 0
