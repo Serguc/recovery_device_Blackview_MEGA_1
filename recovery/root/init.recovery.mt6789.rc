@@ -90,5 +90,12 @@ on boot
     start vendor.vibrator-default
     setprop sys.usb.config adb
 	
+service modules_mount /system/bin/modules_mount.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on property:twrp.decrypt.done=true
     start modules_mount
