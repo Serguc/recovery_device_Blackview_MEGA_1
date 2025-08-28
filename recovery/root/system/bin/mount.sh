@@ -6,7 +6,6 @@ sleep 5
 umount /system_root
 umount /system_ext
 umount /product
-umount /mi_ext
 umount /vendor
 umount /vendor_dlkm
 umount /odm_dlkm
@@ -32,7 +31,6 @@ mount -o remount,rw /odm_dlkm
 #umount /system_root
 #umount /system_ext
 #umount /product
-#umount /mi_ext
 #umount /vendor
 
 exit 0
