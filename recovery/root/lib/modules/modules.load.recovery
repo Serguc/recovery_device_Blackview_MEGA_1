@@ -166,3 +166,4 @@ odm_tp_info.ko
 sec.ko
 uload_ind.ko
 load_track.ko
+hxchipset_hx83122.ko
