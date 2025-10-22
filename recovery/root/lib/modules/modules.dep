@@ -172,3 +172,4 @@
 /lib/modules/mac80211.ko: /lib/modules/cfg80211.ko
 /lib/modules/mtk_mdpm.ko:
 /lib/modules/panel-hx83102-fhd-jindongfang-vdo-60hz-cphy-tp7691.ko: /lib/modules/rt4831a_drv.ko /lib/modules/mtk_panel_ext.ko /lib/modules/leds-mtk.ko
+/lib/modules/hxchipset_hx83122.ko:
