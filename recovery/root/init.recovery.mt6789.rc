@@ -16,14 +16,6 @@ on fs
 
 on post-fs
 
-# For vibrator
-    write /sys/class/leds/vibrator/trigger "transient"
-    chown system system /sys/class/leds/vibrator/trigger
-    chown system system /sys/class/leds/vibrator/activate
-    chown system system /sys/class/leds/vibrator/brightness
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/leds/vibrator/state
-
 # flashlight
     chown system system /sys/class/leds/flashlight/trigger
     chown system system /sys/class/leds/flashlight/brightness
