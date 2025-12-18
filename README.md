@@ -1,4 +1,4 @@
-##  Recovery tree of Blackview MEGA 1
+##  Android device tree for Tablet Blackview MEGA  1
 
 It was announced & released on November 2023.
 
