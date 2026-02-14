@@ -195,5 +195,17 @@ TWRP_INCLUDE_LOGCAT := true
 # Apex
 TW_EXCLUDE_APEX=true
 
+# Kernel Modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
+    $(DEVICE_PATH)/prebuilt/modules/mtk-mbox.ko \
+    $(DEVICE_PATH)/prebuilt/modules/mtk_rpmsg_mbox.ko \
+    $(DEVICE_PATH)/prebuilt/modules/mtk_tinysys_ipi.ko \
+    $(DEVICE_PATH)/prebuilt/modules/odm_tp_info.ko \
+    $(DEVICE_PATH)/prebuilt/modules/gt9886.ko \
+    $(DEVICE_PATH)/prebuilt/modules/gt9896s.ko
+
+# Чтобы модули загружались автоматически при старте ядра
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES)
+
 # Maintainer specific settings
 #TW_DEVICE_VERSION := Serguc
