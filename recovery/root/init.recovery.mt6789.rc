@@ -63,6 +63,7 @@ on property:twrp.all.users.decrypted=true
     stop gatekeeper-1-0
 
 on boot
+    start boot-hal-1-2
     start health-hal-2-1
     start vendor.vibrator-default
     setprop sys.usb.config adb
@@ -74,8 +75,15 @@ service modules_mount /system/bin/modules_mount.sh
     oneshot
     seclabel u:r:recovery:s0
 
-on early-init
-    exec u:r:modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules mtk-mbox mtk_rpmsg_mbox mtk_tinysys_ipi odm_tp_info gt9886 gt9896s
-
 on property:twrp.decrypt.done=true
     start modules_mount
+
+on boot
+    start load_ts_firmware
+
+service load_ts_firmware /vendor/bin/load_ts_firmware.sh
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
