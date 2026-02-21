@@ -179,6 +179,7 @@ TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP :=true
 TW_INCLUDE_REPACKTOOLS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 #Perhaps this value is not correct
@@ -188,7 +189,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
 
 # vendor module loading
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_LOAD_PREBUILT_MODULES := true
 
 # Debug
 TARGET_USES_LOGD := true
