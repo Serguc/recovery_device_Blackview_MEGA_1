@@ -139,7 +139,6 @@ cache-parity.ko
 mtk_battery_oc_throttling.ko
 mtk_low_battery_throttling.ko
 pmic_lbat_service.ko
-pmic_lvsys_notify.ko
 mtk_dynamic_loading_throttling.ko
 mtk_pbm.ko
 mtk_mdpm.ko
@@ -166,4 +165,3 @@ odm_tp_info.ko
 sec.ko
 uload_ind.ko
 load_track.ko
-hxchipset_hx83122.ko
