@@ -137,7 +137,6 @@ mtk-dvfsrc-helper.ko
 mtk-dvfsrc-devfreq.ko
 cache-parity.ko
 pmic_lbat_service.ko
-pmic_lvsys_notify.ko
 reset-ti-syscon.ko
 mtk_slbc.ko
 vcp_status.ko
