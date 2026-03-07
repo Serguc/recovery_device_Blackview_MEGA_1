@@ -11,8 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-LOCAL_PATH := device/Blackview/MEGA_1
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 32
 
@@ -30,7 +28,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl.recovery
     bootctrl
 
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     bootctrl
 
 # Fastbootd
@@ -110,5 +108,5 @@ PRODUCT_COPY_FILES += \
      device/Blackview/MEGA_1/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789
 
 # OEM otacerts
-#PRODUCT_EXTRA_RECOVERY_KEYS += \
+PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/releasekey
