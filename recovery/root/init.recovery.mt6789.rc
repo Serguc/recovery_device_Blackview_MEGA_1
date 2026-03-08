@@ -5,6 +5,13 @@ import /mtk-plpath-utils.rc
 on boot
     write /proc/bootprof "INIT:boot"
 
+on post-fs-data
+    # Touch Panel
+    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
+
  # Touch Panel
     # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
@@ -43,6 +50,9 @@ on early-fs
 
 on boot
     exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
+    start mtk.plpath.utils.link
+    start health-hal-2-1
+    start system_suspend
 
 on property:persist.vendor.mtk.pl_lnk=1
     symlink /dev/block/mapper/pl_a /dev/block/by-name/preloader_raw_a
@@ -80,6 +90,15 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     oneshot
     disabled
 
+service system_suspend /system/bin/hw/android.system.suspend-service
+    class early_hal
+    interface aidl android.system.suspend.ISystemSuspend/default
+    user root
+    group root wakelock
+    capabilities BLOCK_SUSPEND
+    disabled
+    seclabel u:r:recovery:s0
+
 service keystore_auth /system/bin/keystore_auth
     oneshot
     user system
@@ -100,9 +119,15 @@ service vendor.vibrator-default /vendor/bin/hw/android.hardware.vibrator-service
     seclabel u:r:recovery:s0
 
 service keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
-    user root
-    group root drmrpc
+    class early_hal
+    interface aidl android.hardware.security.keymint.IKeyMintDevice/default
+    interface aidl android.hardware.security.keymint.IRemotelyProvisionedComponent/default
+    interface aidl android.hardware.security.sharedsecret.ISharedSecret/default
+    interface aidl android.hardware.security.secureclock.ISecureClock/default
+    user system
+    group system drmrpc
     disabled
+    oneshot
     seclabel u:r:recovery:s0
 
 service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
@@ -112,11 +137,18 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
     disabled
     seclabel u:r:recovery:s0
 
-on property:vendor.sys.listener.registered=true
-    start gatekeeper-1-0
-    start keymint-trustonic
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    write /proc/bootprof "crypto: install_keyring (crypto.ready=1)"
+    install_keyring
+    setprop crypto.ready 1
 
 on property:crypto.ready=1
+    write /proc/bootprof "crypto: start keymint-trustonic"
+    start keymint-trustonic
+
+on property:vendor.sys.listener.registered=true
+    start mobicore
+    start gatekeeper-1-0
     start keymint-trustonic
 
 on property:hwservicemanager.ready=true
@@ -145,4 +177,3 @@ on property:twrp.all.users.decrypted=true
 
 on boot
     start boot-hal-1-2
-    start health-hal-2-1
