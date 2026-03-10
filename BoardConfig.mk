@@ -206,6 +206,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp"
 # vendor module loading
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_LOAD_PREBUILT_MODULES := true
+TW_LOAD_VENDOR_MODULES := "mtk_tpd.ko goodix_core.ko"
 
 # Debug
 TARGET_USES_LOGD := true
