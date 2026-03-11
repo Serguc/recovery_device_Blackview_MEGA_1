@@ -15,7 +15,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_TARGET_VNDK_VERSION := 32
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 31
+PRODUCT_SHIPPING_API_LEVEL := 32
 
 # Virtual_ab_ota
 ENABLE_VIRTUAL_AB := true
@@ -48,7 +48,6 @@ AB_OTA_UPDATER := true
 
 # A/B
 AB_OTA_PARTITIONS += \
-    preloader \
     boot \
     dtbo \
     system \
@@ -63,10 +62,6 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor \
     tee \
     gz \
-    lk \
-    mcupm \
-    md1img \
-    pi_img \
     
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
